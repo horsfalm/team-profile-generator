@@ -1,36 +1,43 @@
-//const fs = require('fs');
+const fs = require('fs');
 const inquirer = require('inquirer');
-//const generatePage = require('./src/page-template.js');
+const generatePage = require('./src/page-template.js');
+// const mockData = {
+//     name: 'Lerantino',
+//     id: 4,
+//     email: 'info@lerantino.com',
+//     phone: 44445555,
+//     employees: []
+// }
 
 // const Employee = require('./lib/Employee');
 // const Manager = require('./lib/Manager');
 // const Engineer = require('./lib/Engineer');
 // const Intern = require('./lib/Intern');
 
-const promptMgr = () => {
+ const promptMgr = () => {
     return inquirer.prompt([
         {
          type: 'text',
-         name: 'name',
+         name: 'mgrName',
          message: 'What is the name of the Team Manager?'
         },
         {
             type: 'number',
-            name: 'id',
+            name: 'mgrId',
             message: 'What is the employee id of the Team Manager?'
         },
         {
             type: 'text',
-            name: 'email',
+            name: 'mgrEmail',
             message: 'What is the email address of the Team Manager?'
         },
         {
             type: 'number',
-            name: 'phone',
-            message: 'What is the office phone number of the Team Manager?'
+            name: 'office',
+            message: 'What is the office number of the Team Manager?'
         }
     ]);
-};
+ };
 
 const promptEmp = teamData => {
     if (!teamData.employees) {
@@ -77,15 +84,14 @@ const promptEmp = teamData => {
 promptMgr()
     .then(promptEmp)
     .then(teamData => {
-        console.log(teamData);
+        const pageHTML = generatePage(teamData); 
+
+ fs.writeFile('./dist/index.html', pageHTML, err => {
+     if (err) throw err;
+
+     console.log('Team page complete! Check out index.html to see the output!');
     });
+});
 
 // };
 
-// const pageHTML = generatePage(name, github);
-
-// fs.writeFile('./dist/index.html', generatePage(pageHTML), err => {
-//     if (err) throw err;
-
-//     console.log('Team page complete! Check out index.html to see the output!');
-// });

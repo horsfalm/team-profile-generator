@@ -1,4 +1,22 @@
-const generatePage = (name, github) => {
+const generateTeam = teamArr => {
+    const teamHTMLArr = teamArr.map(({ name, id, email }) => {
+    return `
+    <div>
+    <h3>${name}</h3>
+    <p>ID: ${id}</p>
+    <p>Email: ${email}</p>
+    </div>
+    `;
+    });
+    return `
+    <div>${teamHTMLArr.join('')}
+    </div>
+    `;
+};
+
+module.exports = templateData => {
+    const { employees, mgrName, mgrId, mgrEmail, office } = templateData;
+    
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -8,13 +26,18 @@ const generatePage = (name, github) => {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Team Profile Generator</title>
     </head>
-
     <body>
-        <h1>${name}</h1>
-        <h2><a href="https://github.com/${github}">Github</a></h2>
+        <header>My Team</header>
+        <div>
+            <h3>${mgrName}</h3>
+            <p>${mgrId}</p>
+            <p>${mgrEmail}</p>
+            <p>${office}</p>
+        </div>
+        ${generateTeam(employees)}
     </body>
     </html>
     `;
 };
 
-module.exports = generatePage;
+// module.exports = generatePage;
