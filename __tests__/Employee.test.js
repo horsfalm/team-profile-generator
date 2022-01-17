@@ -1,6 +1,6 @@
 const Employee = require('../lib/Employee')
 
-test('creates a employee object', () => {
+test('creates an employee object', () => {
     const employee = new Employee('Dave');
 
     expect(employee.name).toBe('Dave');
@@ -29,5 +29,5 @@ test('gets employee email', () => {
 test('gets employee role', () => {
     const employee = new Employee('Dave');
 
-    expect(employee.getRole()).toEqual(expect.any(String));
+    expect(employee.getRole()).toEqual('Employee');
 });

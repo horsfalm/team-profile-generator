@@ -15,7 +15,7 @@ const generateTeam = teamArr => {
 };
 
 module.exports = templateData => {
-    const { employees, mgrName, mgrId, mgrEmail, office } = templateData;
+    const { employees, mgrName, mgrId, mgrEmail, officeNumber } = templateData;
     
     return `
     <!DOCTYPE html>
@@ -32,7 +32,7 @@ module.exports = templateData => {
             <h3>${mgrName}</h3>
             <p>${mgrId}</p>
             <p>${mgrEmail}</p>
-            <p>${office}</p>
+            <p>${officeNumber}</p>
         </div>
         ${generateTeam(employees)}
     </body>
