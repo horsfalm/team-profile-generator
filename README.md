@@ -51,4 +51,4 @@ Use of npm Jest module for tests against employee functionality.
 
 ## Questions
 
-horsfalm#gmail.com
+horsfalm@gmail.com
