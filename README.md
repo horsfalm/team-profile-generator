@@ -2,7 +2,7 @@
 week 10 challenge
 
 ## Table of Contents:
-[1. Backgroung](#Background)  
+[1. Background](#Background)  
 [2. User Story](#User-Story)  
 [3. Acceptance Criteria](#Acceptance-Critera)  
 [4. Tests](#Tests)  
