@@ -205,9 +205,13 @@ function addIntern() {
 };
 
 function buildTeam() {
-console.log(team);
-    //     fs.writeFileSync('./dist/index.html', renderPage(team), 'UTF-8');
-}
+
+     fs.writeFileSync('./dist/index.html', generatePage(team), err => {
+      if (err) throw err;
+
+      console.log('Team page complete! Check out index.html to see the output!');
+     })
+};
 
 getManager();
 
