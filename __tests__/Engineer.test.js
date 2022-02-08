@@ -1,29 +1,22 @@
 const Engineer = require("../lib/Engineer");
 
+test('Engineer Parameters are correct', () => {
+    const engineer = new Engineer('Billy', '75', 'billy@sanders.com', 'horsfalm');
 
-test('Create Engineer Obj', () => {
-    const engineer = new Engineer('Garves', '50', 'example@engineering.com', 'example@github.com');
-
-    expect(engineer).toEqual(expect.any(Object));
+    expect(engineer.name).toBe('Billy');
+    expect(engineer.id).toBe('75');
+    expect(engineer.email).toBe('billy@sanders.com');
+    expect(engineer.github).toBe('horsfalm');
 });
 
-test('Engineer Params are being used properly', () => {
-    const engineer = new Engineer('Garves', '50', 'example@engineering.com', 'example@github.com');
-
-    expect(engineer.name).toBe('Garves');
-    expect(engineer.id).toBe('50');
-    expect(engineer.email).toBe('example@engineering.com');
-    expect(engineer.github).toBe('example@github.com');
-});
-
-test('Get engineer github via getGithub()', () => {
-    const engineer = new Engineer('Garves', '50', 'example@engineering.com', 'example@github.com');
+test('Get engineer github', () => {
+    const engineer = new Engineer('Billy', '75', 'billy@sanders.com', 'horsfalm');
 
     expect(engineer.getGithub()).toEqual(expect.stringContaining(engineer.github.toString()));
 });
 
 test('Get engineer role', () => {
-    const engineer = new Engineer('Garves', '50', 'example@engineering.com', 'example@github.com');
+    const engineer = new Engineer('Billy', '75', 'billy@sanders.com', 'horsfalm');
 
     expect(engineer.getRole()).toBe('Engineer');
 });
