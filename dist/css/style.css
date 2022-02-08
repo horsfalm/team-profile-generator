@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+}
+
+.team-heading {
+    color:white;
+    font-weight: bold;
+    background-color: brown;
+}
+
+.card-header {
+    background-color:lightyellow;
+}
+
+.card-title {
+    background-color: lightyellow;
+}

@@ -1,10 +1,14 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "tool for creating simple team profile",
+  "description": "Team profile generator",
   "main": "index.js",
   "directories": {
     "lib": "lib"
+  },
+  "devDependencies": {
+    "inquirer": "^7.3.0",
+    "jest": "^26.1.0"
   },
   "scripts": {
     "test": "jest"
@@ -14,15 +18,5 @@
     "url": "git+https://github.com/horsfalm/team-profile-generator.git"
   },
   "author": "Mark Horsfall",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/horsfalm/team-profile-generator/issues"
-  },
-  "homepage": "https://github.com/horsfalm/team-profile-generator#readme",
-  "devDependencies": {
-    "jest": "^27.4.7"
-  },
-  "dependencies": {
-    "inquirer": "^8.2.0"
-  }
+  "license": "ISC"
 }

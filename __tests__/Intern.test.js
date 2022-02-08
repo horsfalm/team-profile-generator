@@ -1,28 +1,29 @@
 const Intern = require("../lib/Intern");
+const { exportAllDeclaration } = require("@babel/types");
 
-test('Creates Intern Object', () => {
-    const intern = new Intern('John Smith', '1', 'john@smith.com', 'UofM');
+test('Creates Intern Obj', () => {
+    const intern = new Intern('Jeremy', '1', 'example@intern.com', 'UofU');
 
     expect(intern).toEqual(expect.any(Object));
 });
 
-test('Intern Parameters are correct', () => {
-    const intern = new Intern('Mary Jones', '2', 'mary@jones.com', 'UofS');
+test('Intern Params are being used properly', () => {
+    const intern = new Intern('Jeremy', '1', 'example@intern.com', 'UofU');
 
-    expect(intern.name).toBe('Mary Jones');
-    expect(intern.id).toBe('2');
-    expect(intern.email).toBe('mary@jones.com');
-    expect(intern.school).toBe('UofS');
+    expect(intern.name).toBe('Jeremy');
+    expect(intern.id).toBe('1');
+    expect(intern.email).toBe('example@intern.com');
+    expect(intern.school).toBe('UofU');
 });
 
-test('Get school', () => {
-    const intern = new Intern('Bill Brown', '3', 'bill@brown.com', 'UofB');
+test('Get intern school via getSchool()', () => {
+    const intern = new Intern('Jeremy', '1', 'example@intern.com', 'UofU');
 
     expect(intern.getSchool()).toEqual(expect.stringContaining(intern.school.toString()));
 });
 
-test('Get role', () => {
-    const intern = new Intern('James Jones', '4', 'james@jones.com', 'UofC');
+test('Get intern role via getRole()', () => {
+    const intern = new Intern('Jeremy', '1', 'example@intern.com', 'UofU');
 
     expect(intern.getRole()).toBe('Intern');
 });
